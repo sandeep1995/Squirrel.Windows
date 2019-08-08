@@ -369,6 +369,8 @@ namespace Squirrel
 
             async Task invokePostInstall(SemanticVersion currentVersion, bool isInitialInstall, bool firstRunOnly, bool silentInstall)
             {
+
+                this.Log().Info("======================================== POST INSTALL ===============================================");
                 var targetDir = getDirectoryForRelease(currentVersion);
                 var args = isInitialInstall ?
                     String.Format("--squirrel-install {0}", currentVersion) :
